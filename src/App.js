@@ -8,7 +8,7 @@ const Header = styled.div`
 function App() {
   return (
     <Header>
-      Coming Soon
+      Coming Soon 
     </Header>
   );
 }
