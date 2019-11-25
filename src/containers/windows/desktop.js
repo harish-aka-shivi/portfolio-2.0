@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Dock from "./dock";
+import Icons from "./icons";
+import Window from "./window";
 
 const DesktopWindow = styled.section`
   height: 100vh;
@@ -11,6 +13,8 @@ const DesktopWindow = styled.section`
 export default function Desktop() {
   return (
     <DesktopWindow>
+      <Icons />
+      <Window></Window>
       <Dock />
     </DesktopWindow>
   );
