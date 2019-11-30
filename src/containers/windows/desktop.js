@@ -14,7 +14,7 @@ export default function Desktop() {
   return (
     <DesktopWindow>
       <Icons />
-      <Window></Window>
+      <Window />
       <Dock />
     </DesktopWindow>
   );

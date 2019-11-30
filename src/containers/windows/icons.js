@@ -19,6 +19,7 @@ const IconButton = styled.button`
   color: white;
   border: none;
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 `;
 
 const IconImage = styled.img`

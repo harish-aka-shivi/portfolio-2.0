@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const WindowRoot = styled.section`
   width: 400px;
@@ -11,7 +12,7 @@ const WindowRoot = styled.section`
   transform: translate(198.882px, 51.4572px);
 `;
 
-const Toolbar = styled.div`
+const ToolbarStyle = styled.div`
   padding: 5px 7px 7px;
   position: relative;
   top: 2px;
@@ -32,7 +33,7 @@ const ToolbarTitle = styled.div`
   vertical-align: middle;
 `;
 
-const Content = styled.div`
+const ContentStyle = styled.div`
   margin-top: 7px;
   width: calc(100% - 30px);
   /* position:relative; */
@@ -44,15 +45,34 @@ const Content = styled.div`
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
 `;
 
-export default function Window() {
+function Content({ children }) {
+  return <ContentStyle>{children}</ContentStyle>;
+}
+
+function Toolbar({ children }) {
   return (
-    <WindowRoot>
-      <Toolbar>
-        <ToolbarTitle>Contact</ToolbarTitle>
-      </Toolbar>
-      <Content>
-        <p>Hey, Please contact me on these links:</p>
-      </Content>
-    </WindowRoot>
+    <ToolbarStyle>
+      <ToolbarTitle>{children}</ToolbarTitle>
+    </ToolbarStyle>
   );
 }
+
+function Window({ children }) {
+  return <WindowRoot>{children}</WindowRoot>;
+}
+
+Content.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+Window.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+Toolbar.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+Window.Toolbar = Toolbar;
+Window.Content = Content;
+export default Window;
