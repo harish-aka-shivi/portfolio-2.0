@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Dock from "./dock";
 import Icons from "./icons";
-import Window from "./window";
+import Window from "./contactWindow";
 
 const DesktopWindow = styled.section`
   height: 100vh;

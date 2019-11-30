@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const WindowRoot = styled.section`
+const WindowRoot = styled.div`
   width: 400px;
   cursor: default;
   padding-bottom: 9px;
   background: #bdbdbd;
   display: inline-block;
   box-shadow: -3px -3px 0 #f2f2f2, inset -3px -3px 0 rgba(0, 0, 0, 0.25);
-  transform: translate(198.882px, 51.4572px);
+  /* transform: translate(198.882px, 51.4572px); */
 `;
 
 const ToolbarStyle = styled.div`
@@ -25,7 +25,7 @@ const ToolbarStyle = styled.div`
 
 const ToolbarTitle = styled.div`
   float: left;
-  /* position:relative; */
+  position: relative;
   color: #fff;
   font-size: 16px;
   margin-top: 2px;
@@ -51,9 +51,11 @@ function Content({ children }) {
 
 function Toolbar({ children }) {
   return (
-    <ToolbarStyle>
-      <ToolbarTitle>{children}</ToolbarTitle>
-    </ToolbarStyle>
+    <div className="handle">
+      <ToolbarStyle>
+        <ToolbarTitle>{children}</ToolbarTitle>
+      </ToolbarStyle>
+    </div>
   );
 }
 
