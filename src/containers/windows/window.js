@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import close from "./icons/close.png";
 
 const WindowRoot = styled.div`
   width: 400px;
@@ -13,7 +14,7 @@ const WindowRoot = styled.div`
 `;
 
 const ToolbarStyle = styled.div`
-  padding: 5px 7px 7px;
+  padding: 5px 7px;
   position: relative;
   top: 2px;
   left: 3px;
@@ -21,14 +22,21 @@ const ToolbarStyle = styled.div`
   width: calc(100% - 26px);
   vertical-align: middle;
   background: linear-gradient(90deg, #de241e 0, #fff200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const ToolbarTitle = styled.div`
   float: left;
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   color: #fff;
   font-size: 16px;
-  margin-top: 2px;
+  /* margin-top: 2px; */
   min-width: 160px;
   vertical-align: middle;
 `;
@@ -45,15 +53,34 @@ const ContentStyle = styled.div`
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
 `;
 
+const CloseButton = styled.a`
+  height: 30px;
+  width: 30px;
+`;
+
+const CloseImage = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+
 function Content({ children }) {
   return <ContentStyle>{children}</ContentStyle>;
 }
 
-function Toolbar({ children }) {
+function Toolbar({ children, onClose }) {
   return (
     <div className="handle">
       <ToolbarStyle>
         <ToolbarTitle>{children}</ToolbarTitle>
+        <CloseButton
+          onClick={event => {
+            if (onClose) {
+              onClose(event);
+            }
+          }}
+        >
+          <CloseImage src={close} alt="Close window" />
+        </CloseButton>
       </ToolbarStyle>
     </div>
   );
