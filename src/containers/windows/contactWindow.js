@@ -1,19 +1,21 @@
-import React from "react";
-import DraggableWindow from "./draggableWindow";
-import Window from "./window";
-import WindowContext from "./windowsContext";
-import { TYPE_CONTACT_WINDOW } from "./constants";
+import React from 'react';
+import PropTypes from 'prop-types';
+import DraggableWindow from './draggableWindow';
+import Window from './window';
+import WindowContext from './windowsContext';
+import { TYPE_CONTACT_WINDOW } from './constants';
 
 export default function ContactWindow({
   controlledPosition,
-  setControlledPosition
+  setControlledPosition,
 }) {
   return (
     <WindowContext.Consumer>
-      {({ removeFromOpenWindows }) => (
+      {({ removeFromOpenWindows, setActiveWindow }) => (
         <DraggableWindow
           controlledPosition={controlledPosition}
           setControlledPosition={setControlledPosition}
+          handleOnMouseDown={() => setActiveWindow(TYPE_CONTACT_WINDOW)}
         >
           <Window>
             <Window.Toolbar
@@ -30,3 +32,8 @@ export default function ContactWindow({
     </WindowContext.Consumer>
   );
 }
+
+ContactWindow.propTypes = {
+  controlledPosition: PropTypes.objectOf.isRequired,
+  setControlledPosition: PropTypes.func.isRequired,
+};

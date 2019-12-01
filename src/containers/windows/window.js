@@ -1,16 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import close from "./icons/close.png";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import close from './icons/close.png';
 
 const WindowRoot = styled.div`
-  width: 400px;
+  width: 100vw;
   cursor: default;
   padding-bottom: 9px;
   background: #bdbdbd;
   display: inline-block;
   box-shadow: -3px -3px 0 #f2f2f2, inset -3px -3px 0 rgba(0, 0, 0, 0.25);
+  position:absolute;
+  left:0px;
+  top:0px;
   /* transform: translate(198.882px, 51.4572px); */
+
+  @media (min-width: 768px) {
+    width:400px;
+  }
+
 `;
 
 const ToolbarStyle = styled.div`
@@ -19,7 +27,7 @@ const ToolbarStyle = styled.div`
   top: 2px;
   left: 3px;
   height: 30px;
-  width: calc(100% - 26px);
+  width: calc(100% - 24px);
   vertical-align: middle;
   background: linear-gradient(90deg, #de241e 0, #fff200);
   display: flex;
@@ -73,7 +81,7 @@ function Toolbar({ children, onClose }) {
       <ToolbarStyle>
         <ToolbarTitle>{children}</ToolbarTitle>
         <CloseButton
-          onClick={event => {
+          onClick={(event) => {
             if (onClose) {
               onClose(event);
             }
@@ -86,20 +94,22 @@ function Toolbar({ children, onClose }) {
   );
 }
 
+
 function Window({ children }) {
   return <WindowRoot>{children}</WindowRoot>;
 }
 
 Content.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.arrayOf.isRequired,
 };
 
 Window.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.arrayOf.isRequired,
 };
 
 Toolbar.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.arrayOf.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 Window.Toolbar = Toolbar;

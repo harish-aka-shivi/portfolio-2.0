@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Dock from "./dock";
-import Icons from "./icons";
-import WindowsManager from "./windowsManager";
-import WindowsContext from "./windowsContext";
-import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW } from "./constants";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Dock from './dock';
+import Icons from './icons';
+import WindowsManager from './windowsManager';
+import WindowsContext from './windowsContext';
+import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW } from './constants';
 
 const DesktopWindow = styled.section`
   height: 100vh;
@@ -15,35 +15,62 @@ const DesktopWindow = styled.section`
 export default function Desktop() {
   const [openWindows, setOpenWindows] = useState([
     TYPE_CONTACT_WINDOW,
-    TYPE_ABOUT_WINDOW
+    TYPE_ABOUT_WINDOW,
   ]);
 
-  const addToOpenWindow = window => {
-    const newOpenWindows = openWindows.slice(0);
-    newOpenWindows.splice(0, 0, window);
-    setOpenWindows(newOpenWindows);
+  const [dockPrograms, setDockPrograms] = useState(openWindows);
+  // static, Update as the first opened window changes.
+  const [activeProgram, setActiveProgram] = useState(TYPE_ABOUT_WINDOW);
+
+  const removeFromDockPrograms = (window) => {
+    const programsCopy = dockPrograms.slice(0);
+    const indexOfPrograms = programsCopy.indexOf(window);
+    programsCopy.splice(indexOfPrograms, 1);
+    setDockPrograms(programsCopy);
   };
 
-  const removeFromOpenWindows = window => {
+  const addToDockPrograms = (window) => {
+    const programsCopy = dockPrograms.slice(0);
+    programsCopy.push(window);
+    setDockPrograms(programsCopy);
+  };
+
+  const removeFromOpenWindows = (window) => {
     const newOpenWindows = openWindows.slice(0);
     const indexOfWindow = newOpenWindows.indexOf(window);
     newOpenWindows.splice(indexOfWindow, 1);
     setOpenWindows(newOpenWindows);
+    removeFromDockPrograms(window);
   };
 
-  const setActiveWindow = window => {
+  const setActiveWindow = (window) => {
     const newOpenWindows = openWindows.slice(0);
     const indexOfWindow = newOpenWindows.indexOf(window);
     newOpenWindows.splice(indexOfWindow, 1);
-    newOpenWindows(0, 0, window);
+    // newOpenWindows.splice(0, 0, window);
+    newOpenWindows.push(window);
     setOpenWindows(newOpenWindows);
+    setActiveProgram(window);
+  };
+
+  const addToOpenWindows = (window) => {
+    const newOpenWindows = openWindows.slice(0);
+    // newOpenWindows.splice(0, 0, window);
+    const indexOfWindow = newOpenWindows.indexOf(window);
+    if (indexOfWindow !== -1) {
+      setActiveWindow(window);
+      return;
+    }
+    newOpenWindows.push(window);
+    setOpenWindows(newOpenWindows);
+    addToDockPrograms(window);
   };
 
   const state = {
     openWindows,
-    addToOpenWindow,
+    addToOpenWindows,
     setActiveWindow,
-    removeFromOpenWindows
+    removeFromOpenWindows,
   };
 
   return (
@@ -51,7 +78,11 @@ export default function Desktop() {
       <DesktopWindow>
         <Icons />
         <WindowsManager openWindows={openWindows} />
-        <Dock />
+        <Dock
+          activeProgram={activeProgram}
+          dockPrograms={dockPrograms}
+          setActiveWindow={setActiveWindow}
+        />
       </DesktopWindow>
     </WindowsContext.Provider>
   );

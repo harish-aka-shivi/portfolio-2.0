@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const WindowsContext = React.createContext({
   openWindows: [],
   setActiveWindow: () => {},
   removeFromOpenWindows: () => {},
-  addToOpenWindows: () => {}
+  addToOpenWindows: () => {},
 });
 
 export default WindowsContext;

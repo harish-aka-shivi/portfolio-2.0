@@ -1,6 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-import Desktop from "./containers/windows/desktop";
+import React from 'react';
+import Desktop from './containers/windows/desktop';
 
 function App() {
   return (

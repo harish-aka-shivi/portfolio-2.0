@@ -1,69 +1,53 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from "react";
-import Draggable from "react-draggable";
-import PropTypes from "prop-types";
+import React from 'react';
+import Draggable from 'react-draggable';
+import PropTypes from 'prop-types';
 
 function DraggableWindow({
   children,
   controlledPosition,
-  setControlledPosition
+  setControlledPosition,
+  handleOnMouseDown,
 }) {
-  const [x, setX] = useState(100);
-  const [y, setY] = useState(100);
-
-  const handleStart = event => {
-    console.log(event);
-  };
-
-  useEffect(() => {
-    console.log("use effect of draggable window is called");
-  }, []);
-
-  const handleDrag = ({ clientX, offsetX, clientY, offsetY }, position) => {
-    console.log(
-      "in drag  => ",
-      clientY,
-      clientX,
-      offsetY,
-      offsetX,
-      x,
-      y,
-      position.x,
-      position.y
-    );
+  const handleDrag = (event, position) => {
     setControlledPosition({ x: position.x, y: position.y });
-    // const trueValueX = clientX - offsetX;
-    // const trueValueY = clientY - offsetY;
-    // setX(trueValueX);
-    // setY(trueValueY);
   };
 
-  console.log("x ==>", x, "y ===> ", y);
+  const internalHandleOnMouseDown = () => {
+    if (handleOnMouseDown) {
+      handleOnMouseDown();
+    }
+  };
 
-  // useEffect(() => {
-
-  // }, []);
+  // eslint-disable-next-line no-undef
+  const disabled = window.screen.width < 700;
+  // console.log('disable ==>', disabled, window.screen.width);
+  const actualControlledPosition = disabled ? { x: 0, y: 0 } : controlledPosition;
 
   return (
     <Draggable
       axis="both"
       handle=".handle"
       // defaultPosition={{ x, y }}
-      position={controlledPosition}
+      position={actualControlledPosition}
       // grid={[25, 25]}
       scale={1}
-      onStart={handleStart}
-      // onMouseDown
+      disabled={disabled}
+      // onStart={handleStart}
+      onMouseDown={internalHandleOnMouseDown}
       onDrag={handleDrag}
       // onStop={this.handleStop}
     >
-      <div style={{ position: "absolute" }}>{children}</div>
+      <div style={{ position: 'absolute' }}>{children}</div>
     </Draggable>
   );
 }
 
 DraggableWindow.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.arrayOf.isRequired,
+  controlledPosition: PropTypes.objectOf.isRequired,
+  setControlledPosition: PropTypes.func.isRequired,
+  handleOnMouseDown: PropTypes.func.isRequired,
 };
 
 export default DraggableWindow;
