@@ -15,7 +15,7 @@ const WindowsContainer = styled.div`
 
 function WindowsManager({ openWindows }) {
   const [contactPosition, setContactPosition] = useState({ x: 100, y: 100 });
-  const [aboutPosition, setAboutPosition] = useState({ x: 100, y: 100 });
+  const [aboutPosition, setAboutPosition] = useState({ x: 400, y: 150 });
 
   return (
     <WindowsContainer>

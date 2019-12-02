@@ -4,6 +4,7 @@ import DraggableWindow from './draggableWindow';
 import Window from './window';
 import WindowsContext from './windowsContext';
 import { TYPE_ABOUT_WINDOW } from './constants';
+import AboutBody from './aboutBody';
 
 export default function AboutWindow({
   controlledPosition,
@@ -25,7 +26,7 @@ export default function AboutWindow({
               <> About </>
             </Window.Toolbar>
             <Window.Content>
-              <p>This is about</p>
+              <AboutBody />
             </Window.Content>
           </Window>
         </DraggableWindow>

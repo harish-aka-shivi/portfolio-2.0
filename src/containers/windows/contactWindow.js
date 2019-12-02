@@ -4,6 +4,7 @@ import DraggableWindow from './draggableWindow';
 import Window from './window';
 import WindowContext from './windowsContext';
 import { TYPE_CONTACT_WINDOW } from './constants';
+import ContactBody from './contactBody';
 
 export default function ContactWindow({
   controlledPosition,
@@ -25,6 +26,7 @@ export default function ContactWindow({
             </Window.Toolbar>
             <Window.Content>
               <p>Hey, Please contact me on these links:</p>
+              <ContactBody />
             </Window.Content>
           </Window>
         </DraggableWindow>

@@ -2,6 +2,13 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const Div = styled.div`
+  @media (max-width: 768px) {
+    transform: none !important;
+  }
+`;
 
 function DraggableWindow({
   children,
@@ -20,25 +27,25 @@ function DraggableWindow({
   };
 
   // eslint-disable-next-line no-undef
-  const disabled = window.screen.width < 700;
+  // const disabled = window.screen.width < 700;
   // console.log('disable ==>', disabled, window.screen.width);
-  const actualControlledPosition = disabled ? { x: 0, y: 0 } : controlledPosition;
+  // const actualControlledPosition = disabled ? { x: 0, y: 0 } : controlledPosition;
 
   return (
     <Draggable
       axis="both"
       handle=".handle"
       // defaultPosition={{ x, y }}
-      position={actualControlledPosition}
+      position={controlledPosition}
       // grid={[25, 25]}
       scale={1}
-      disabled={disabled}
+      // disabled={disabled}
       // onStart={handleStart}
       onMouseDown={internalHandleOnMouseDown}
       onDrag={handleDrag}
       // onStop={this.handleStop}
     >
-      <div style={{ position: 'absolute' }}>{children}</div>
+      <Div style={{ position: 'fixed' }}>{children}</Div>
     </Draggable>
   );
 }

@@ -5,6 +5,7 @@ import close from './icons/close.png';
 
 const WindowRoot = styled.div`
   width: 100vw;
+  height:100vh;
   cursor: default;
   padding-bottom: 9px;
   background: #bdbdbd;
@@ -16,7 +17,9 @@ const WindowRoot = styled.div`
   /* transform: translate(198.882px, 51.4572px); */
 
   @media (min-width: 768px) {
-    width:400px;
+    width: ${(props) => (props.width ? `${props.width}px` : '400px')};
+    height:auto;
+    /* height: ${(props) => (props.height ? `${props.height}px` : '400px')}; */
   }
 
 `;
@@ -26,7 +29,7 @@ const ToolbarStyle = styled.div`
   position: relative;
   top: 2px;
   left: 3px;
-  height: 30px;
+  min-height: 20%;
   width: calc(100% - 24px);
   vertical-align: middle;
   background: linear-gradient(90deg, #de241e 0, #fff200);
@@ -55,7 +58,8 @@ const ContentStyle = styled.div`
   /* position:relative; */
   /* width:100%;  */
   padding: 10px;
-  min-height: 200px;
+  /* min-height: 200px; */
+  min-height:83%;
   margin-left: 3px;
   background: #fff;
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
@@ -95,8 +99,8 @@ function Toolbar({ children, onClose }) {
 }
 
 
-function Window({ children }) {
-  return <WindowRoot>{children}</WindowRoot>;
+function Window({ children, height, width }) {
+  return <WindowRoot height={height} width={width}>{children}</WindowRoot>;
 }
 
 Content.propTypes = {
@@ -105,6 +109,13 @@ Content.propTypes = {
 
 Window.propTypes = {
   children: PropTypes.arrayOf.isRequired,
+  height: PropTypes.number,
+  width: PropTypes.number,
+};
+
+Window.defaultProps = {
+  height: 400,
+  width: 400,
 };
 
 Toolbar.propTypes = {
