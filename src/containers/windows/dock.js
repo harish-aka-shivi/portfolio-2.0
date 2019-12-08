@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Timer from './timer';
 
 const StartButton = styled.div`
   font-family: Anonymous Pro,monospace;
@@ -76,6 +77,16 @@ const ProgramList = styled.div`
   }
 `;
 
+const TimerContainer = styled.div`
+  font-size: 18px;
+  float: right;
+  font-weight: 700;
+  box-shadow: inset 3px 3px 0 rgba(0,0,0,.25), 2px 2px 0 hsla(0,0%,100%,.8);
+  margin-top: -3px;
+  margin-right: 5px;
+  padding: 15px 20px 11px;
+`;
+
 function StartButtonWindow({ title }) {
   return (
     <StartButton
@@ -131,6 +142,9 @@ export default function Dock({ activeProgram, dockPrograms, setActiveWindow }) {
           ))
         }
       </ProgramList>
+      <TimerContainer>
+        <Timer />
+      </TimerContainer>
     </DockBar>
   );
 }

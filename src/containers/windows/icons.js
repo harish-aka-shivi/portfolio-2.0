@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import account from './icons/account.png';
+import account from './icons/account.svg';
 import work from './icons/work.png';
 import mail from './icons/mail.png';
 import WindowsContext from './windowsContext';
@@ -21,12 +21,14 @@ const IconButton = styled.button`
   background-color: transparent;
   color: white;
   border: none;
+  font-size:1.1em;
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
 `;
 
 const IconImage = styled.img`
-  width: 60px;
+  width: 10vh;
+  height:10vh;
   display: block;
   margin-bottom: 15px;
 `;
