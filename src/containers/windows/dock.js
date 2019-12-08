@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Timer from './timer';
+import account from './icons/account.svg';
+import work from './icons/work.svg';
+import mail from './icons/mail.svg';
 
 const StartButton = styled.div`
   font-family: Anonymous Pro,monospace;
@@ -78,13 +81,19 @@ const ProgramList = styled.div`
 `;
 
 const TimerContainer = styled.div`
-  font-size: 18px;
+  font-size: 1.1em;
   float: right;
   font-weight: 700;
   box-shadow: inset 3px 3px 0 rgba(0,0,0,.25), 2px 2px 0 hsla(0,0%,100%,.8);
   margin-top: -3px;
   margin-right: 5px;
   padding: 15px 20px 11px;
+`;
+
+const ProgramButtonIcon = styled.img`
+  height:10px;
+  width:10px;
+  margin-right: 10px;
 `;
 
 function StartButtonWindow({ title }) {
@@ -101,7 +110,9 @@ StartButtonWindow.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-function ProgramButton({ title, active = false, onClick }) {
+function ProgramButton({
+  title, active = false, onClick, icon,
+}) {
   return (
     <ProgramButtonStyle
       onClick={() => {
@@ -112,6 +123,7 @@ function ProgramButton({ title, active = false, onClick }) {
       active={active}
       role="button"
     >
+      { icon && <ProgramButtonIcon src={icon} />}
       <span role="button">{title}</span>
     </ProgramButtonStyle>
   );
@@ -121,11 +133,29 @@ ProgramButton.propTypes = {
   title: PropTypes.string.isRequired,
   active: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
+  icon: PropTypes.string,
+};
+
+ProgramButton.defaultProps = {
+  icon: '',
 };
 
 export default function Dock({ activeProgram, dockPrograms, setActiveWindow }) {
   const toUpperCaseJustFirstLetter = (word) => word.slice(0, 1)
     .toUpperCase() + word.slice(1).toLowerCase();
+
+  const getIconPath = (word) => {
+    switch (word.toLowerCase()) {
+      case 'about':
+        return account;
+      case 'work':
+        return work;
+      case 'contact':
+        return mail;
+      default:
+        return '';
+    }
+  };
 
   return (
     <DockBar>
@@ -134,6 +164,7 @@ export default function Dock({ activeProgram, dockPrograms, setActiveWindow }) {
         {
           dockPrograms.map((item) => (
             <ProgramButton
+              icon={getIconPath(item)}
               key={item}
               active={activeProgram === item}
               title={toUpperCaseJustFirstLetter(item)}

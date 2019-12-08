@@ -5,6 +5,7 @@ import Window from './window';
 import WindowContext from './windowsContext';
 import { TYPE_CONTACT_WINDOW } from './constants';
 import ContactBody from './contactBody';
+import mail from './icons/mail.svg';
 
 export default function ContactWindow({
   controlledPosition,
@@ -20,6 +21,7 @@ export default function ContactWindow({
         >
           <Window>
             <Window.Toolbar
+              icon={mail}
               onClose={() => removeFromOpenWindows(TYPE_CONTACT_WINDOW)}
             >
               <> Contact </>

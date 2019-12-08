@@ -5,6 +5,7 @@ import Window from './window';
 import WindowsContext from './windowsContext';
 import { TYPE_ABOUT_WINDOW } from './constants';
 import AboutBody from './aboutBody';
+import account from './icons/account.svg';
 
 export default function AboutWindow({
   controlledPosition,
@@ -21,6 +22,7 @@ export default function AboutWindow({
         >
           <Window>
             <Window.Toolbar
+              icon={account}
               onClose={() => removeFromOpenWindows(TYPE_ABOUT_WINDOW)}
             >
               <> About </>

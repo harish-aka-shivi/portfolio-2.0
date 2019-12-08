@@ -52,6 +52,11 @@ const ToolbarTitle = styled.div`
   vertical-align: middle;
 `;
 
+const ToolbarIcon = styled.img`
+  height:15%;
+  width:15%
+`;
+
 const ContentStyle = styled.div`
   margin-top: 7px;
   width: calc(100% - 30px);
@@ -79,11 +84,14 @@ function Content({ children }) {
   return <ContentStyle>{children}</ContentStyle>;
 }
 
-function Toolbar({ children, onClose }) {
+function Toolbar({ children, icon, onClose }) {
   return (
     <div className="handle">
       <ToolbarStyle>
-        <ToolbarTitle>{children}</ToolbarTitle>
+        <ToolbarTitle>
+          {icon && <ToolbarIcon src={icon} />}
+          {children}
+        </ToolbarTitle>
         <CloseButton
           onClick={(event) => {
             if (onClose) {
@@ -118,9 +126,14 @@ Window.defaultProps = {
   width: 400,
 };
 
+Toolbar.defaultProps = {
+  icon: '',
+};
+
 Toolbar.propTypes = {
   children: PropTypes.arrayOf.isRequired,
   onClose: PropTypes.func.isRequired,
+  icon: PropTypes.string,
 };
 
 Window.Toolbar = Toolbar;

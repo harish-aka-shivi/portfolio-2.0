@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const TimerDiv = styled.div`
   height:100%;
   width:100%;
+  letter-spacing:1px;
 `;
 
 function getTimeString() {
