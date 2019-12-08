@@ -58,6 +58,12 @@ const DockBar = styled.section`
     float: left;
     margin-bottom: 8px;
   }
+
+  @media (max-width: 500px) {
+    display:none;
+    /* height: ${(props) => (props.height ? `${props.height}px` : '400px')}; */
+  }
+
 `;
 
 const ProgramList = styled.div`

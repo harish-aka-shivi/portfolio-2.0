@@ -54,7 +54,8 @@ const ToolbarTitle = styled.div`
 
 const ToolbarIcon = styled.img`
   height:15%;
-  width:15%
+  width:15%;
+  user-select:none;
 `;
 
 const ContentStyle = styled.div`
@@ -89,7 +90,7 @@ function Toolbar({ children, icon, onClose }) {
     <div className="handle">
       <ToolbarStyle>
         <ToolbarTitle>
-          {icon && <ToolbarIcon src={icon} />}
+          {icon && <ToolbarIcon draggable={false} src={icon} />}
           {children}
         </ToolbarTitle>
         <CloseButton
