@@ -14,8 +14,11 @@ const WindowsContainer = styled.div`
 `;
 
 function WindowsManager({ openWindows }) {
-  const [contactPosition, setContactPosition] = useState({ x: 100, y: 100 });
-  const [aboutPosition, setAboutPosition] = useState({ x: 400, y: 150 });
+  // eslint-disable-next-line no-undef
+  const windowWidth = window.screen.width;
+
+  const [contactPosition, setContactPosition] = useState({ x: windowWidth / 5, y: 100 });
+  const [aboutPosition, setAboutPosition] = useState({ x: windowWidth / 2, y: 100 });
 
   return (
     <WindowsContainer>

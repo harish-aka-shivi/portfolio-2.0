@@ -95,7 +95,7 @@ function AboutBody() {
           Working on web, mobile and everything in between.
         </Content>
       </AboutRoot>
-        ======================================
+        ===================================
       <Skills>
         <SkillTitle>Skills</SkillTitle>
         <SkillBody>

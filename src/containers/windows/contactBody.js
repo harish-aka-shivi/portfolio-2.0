@@ -41,9 +41,10 @@ function SocialItem({
   title, icon, url, alt,
 }) {
   return (
-    <SocialRoot href={url} target="_blank" alt={alt}>
+    <SocialRoot href={url} target="_blank">
       <Icon
         src={icon}
+        alt={alt}
       />
 
       <Title>
