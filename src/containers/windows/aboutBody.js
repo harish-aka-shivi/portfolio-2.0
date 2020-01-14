@@ -28,7 +28,7 @@ const SkillTitle = styled.h3`
   margin-bottom:8px;
 `;
 
-const SkillBody = styled.p`
+const SkillBody = styled.div`
 
 `;
 
@@ -100,30 +100,32 @@ function AboutBody() {
         <SkillTitle>Skills</SkillTitle>
         <SkillBody>
           <SkillTable>
-            <TableRow>
-              <TableD>
-                <SkillItem title="Android" icon={android} alt="Android" />
-              </TableD>
-              <TableD>
-                <SkillItem title="React" icon={react} alt="React" />
-              </TableD>
-            </TableRow>
-            <TableRow>
-              <TableD>
-                <SkillItem title="React Native" icon={reactnative} alt="React Native" />
-              </TableD>
-              <TableD>
-                <SkillItem title="Node" icon={node} alt="Node" />
-              </TableD>
-            </TableRow>
-            <TableRow>
-              <TableD>
-                <SkillItem title="Javascript" icon={javascript} alt="Javascript" />
-              </TableD>
-              <TableD>
-                <SkillItem title="Java" icon={java} alt="Java" />
-              </TableD>
-            </TableRow>
+            <tbody>
+              <TableRow>
+                <TableD>
+                  <SkillItem title="Android" icon={android} alt="Android" />
+                </TableD>
+                <TableD>
+                  <SkillItem title="React" icon={react} alt="React" />
+                </TableD>
+              </TableRow>
+              <TableRow>
+                <TableD>
+                  <SkillItem title="React Native" icon={reactnative} alt="React Native" />
+                </TableD>
+                <TableD>
+                  <SkillItem title="Node" icon={node} alt="Node" />
+                </TableD>
+              </TableRow>
+              <TableRow>
+                <TableD>
+                  <SkillItem title="Javascript" icon={javascript} alt="Javascript" />
+                </TableD>
+                <TableD>
+                  <SkillItem title="Java" icon={java} alt="Java" />
+                </TableD>
+              </TableRow>
+            </tbody>
           </SkillTable>
         </SkillBody>
       </Skills>

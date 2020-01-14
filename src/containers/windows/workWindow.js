@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import DraggableWindow from './draggableWindow';
 import Window from './window';
 import WindowContext from './windowsContext';
-import { TYPE_CONTACT_WINDOW } from './constants';
+import { TYPE_WORK_WINDOW } from './constants';
 import ContactBody from './contactBody';
-import mail from './icons/mail.svg';
+import work from './icons/work.svg';
 
-export default function ContactWindow({
+export default function WorkWindow({
   controlledPosition,
   setControlledPosition,
 }) {
@@ -17,14 +17,14 @@ export default function ContactWindow({
         <DraggableWindow
           controlledPosition={controlledPosition}
           setControlledPosition={setControlledPosition}
-          handleOnMouseDown={() => setActiveWindow(TYPE_CONTACT_WINDOW)}
+          handleOnMouseDown={() => setActiveWindow(TYPE_WORK_WINDOW)}
         >
           <Window>
             <Window.Toolbar
-              icon={mail}
-              onClose={() => removeFromOpenWindows(TYPE_CONTACT_WINDOW)}
+              icon={work}
+              onClose={() => removeFromOpenWindows(TYPE_WORK_WINDOW)}
             >
-              <> Contact </>
+              <> Work </>
             </Window.Toolbar>
             <Window.Content>
               <p>Hey, Please contact me on these links:</p>
@@ -37,7 +37,7 @@ export default function ContactWindow({
   );
 }
 
-ContactWindow.propTypes = {
+WorkWindow.propTypes = {
   controlledPosition: PropTypes.exact({
     x: PropTypes.number,
     y: PropTypes.number,

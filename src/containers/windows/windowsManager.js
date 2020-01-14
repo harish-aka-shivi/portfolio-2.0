@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ContactWindow from './contactWindow';
 import AboutWindow from './aboutWindow';
-import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW } from './constants';
+import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW, TYPE_WORK_WINDOW } from './constants';
+import WorkWindow from './workWindow';
 
 const WindowsContainer = styled.div`
   height: 100vh;
@@ -14,7 +15,6 @@ const WindowsContainer = styled.div`
 `;
 
 function WindowsManager({ openWindows }) {
-  // eslint-disable-next-line no-undef
   const windowWidth = window.screen.width;
 
   const [contactPosition, setContactPosition] = useState({ x: windowWidth / 5, y: 100 });
@@ -38,6 +38,15 @@ function WindowsManager({ openWindows }) {
               controlledPosition={aboutPosition}
               setControlledPosition={setAboutPosition}
               key={TYPE_ABOUT_WINDOW}
+            />
+          );
+        }
+        if (window === TYPE_WORK_WINDOW) {
+          return (
+            <WorkWindow
+              controlledPosition={aboutPosition}
+              setControlledPosition={setAboutPosition}
+              key={TYPE_WORK_WINDOW}
             />
           );
         }

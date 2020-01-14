@@ -18,7 +18,6 @@ export default function AboutWindow({
           controlledPosition={controlledPosition}
           setControlledPosition={setControlledPosition}
           handleOnMouseDown={() => setActiveWindow(TYPE_ABOUT_WINDOW)}
-
         >
           <Window>
             <Window.Toolbar
@@ -38,6 +37,9 @@ export default function AboutWindow({
 }
 
 AboutWindow.propTypes = {
-  controlledPosition: PropTypes.objectOf.isRequired,
+  controlledPosition: PropTypes.exact({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
   setControlledPosition: PropTypes.func.isRequired,
 };

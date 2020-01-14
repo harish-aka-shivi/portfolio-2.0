@@ -50,9 +50,16 @@ function DraggableWindow({
   );
 }
 
+DraggableWindow.defaultProps = {
+  // children: null,
+};
+
 DraggableWindow.propTypes = {
-  children: PropTypes.arrayOf.isRequired,
-  controlledPosition: PropTypes.objectOf.isRequired,
+  children: PropTypes.node.isRequired,
+  controlledPosition: PropTypes.exact({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
   setControlledPosition: PropTypes.func.isRequired,
   handleOnMouseDown: PropTypes.func.isRequired,
 };
