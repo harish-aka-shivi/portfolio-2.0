@@ -16,9 +16,10 @@ const WindowsContainer = styled.div`
 
 function WindowsManager({ openWindows }) {
   const windowWidth = window.screen.width;
-
+  const windowHeight = window.screen.height;
   const [contactPosition, setContactPosition] = useState({ x: windowWidth / 5, y: 100 });
   const [aboutPosition, setAboutPosition] = useState({ x: windowWidth / 2, y: 100 });
+  const [workPosition, setWorkPosition] = useState({ x: windowWidth / 3, y: windowHeight / 4 });
 
   return (
     <WindowsContainer>
@@ -44,8 +45,8 @@ function WindowsManager({ openWindows }) {
         if (window === TYPE_WORK_WINDOW) {
           return (
             <WorkWindow
-              controlledPosition={aboutPosition}
-              setControlledPosition={setAboutPosition}
+              controlledPosition={workPosition}
+              setControlledPosition={setWorkPosition}
               key={TYPE_WORK_WINDOW}
             />
           );
