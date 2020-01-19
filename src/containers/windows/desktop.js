@@ -5,6 +5,7 @@ import Icons from './icons';
 import WindowsManager from './windowsManager';
 import WindowsContext from './windowsContext';
 import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW } from './constants';
+import ErrorScreen from './errorScreen';
 
 const DesktopWindow = styled.section`
   height: 100vh;
@@ -74,16 +75,17 @@ export default function Desktop() {
   };
 
   return (
-    <WindowsContext.Provider value={state}>
-      <DesktopWindow>
-        <Icons />
-        <WindowsManager openWindows={openWindows} />
-        <Dock
-          activeProgram={activeProgram}
-          dockPrograms={dockPrograms}
-          setActiveWindow={setActiveWindow}
-        />
-      </DesktopWindow>
-    </WindowsContext.Provider>
+    <ErrorScreen />
+    // <WindowsContext.Provider value={state}>
+    //   <DesktopWindow>
+    //     <Icons />
+    //     <WindowsManager openWindows={openWindows} />
+    //     <Dock
+    //       activeProgram={activeProgram}
+    //       dockPrograms={dockPrograms}
+    //       setActiveWindow={setActiveWindow}
+    //     />
+    //   </DesktopWindow>
+    // </WindowsContext.Provider>
   );
 }

@@ -37,6 +37,10 @@ const Title = styled.strong`
   margin-left:8px;
 `;
 
+const ContactTitle = styled.p`
+  padding-left: 10px;
+`;
+
 function SocialItem({
   title, icon, url, alt,
 }) {
@@ -64,6 +68,7 @@ SocialItem.propTypes = {
 export default function ContactBody() {
   return (
     <ContactBodyRoot>
+      <ContactTitle>Hey, Please contact me on these links:</ContactTitle>
       <List>
         <ListItem>
           <SocialItem icon={gmail} title="harish_rana09@outlook.com" url="mailto:harish_rana09@outlook.com" alt="Gmail" />

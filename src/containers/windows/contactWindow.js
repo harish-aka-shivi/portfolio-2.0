@@ -27,7 +27,6 @@ export default function ContactWindow({
               <> Contact </>
             </Window.Toolbar>
             <Window.Content>
-              <p>Hey, Please contact me on these links:</p>
               <ContactBody />
             </Window.Content>
           </Window>

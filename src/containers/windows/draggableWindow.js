@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import Draggable from 'react-draggable';
 import PropTypes from 'prop-types';
@@ -17,7 +16,9 @@ function DraggableWindow({
   handleOnMouseDown,
 }) {
   const handleDrag = (event, position) => {
-    setControlledPosition({ x: position.x, y: position.y });
+    if (setControlledPosition) {
+      setControlledPosition({ x: position.x, y: position.y });
+    }
   };
 
   const internalHandleOnMouseDown = () => {
