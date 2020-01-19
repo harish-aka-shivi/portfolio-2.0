@@ -102,18 +102,24 @@ const ProgramButtonIcon = styled.img`
   margin-right: 10px;
 `;
 
-function StartButtonWindow({ title }) {
+function StartButtonWindow({ title, onClick }) {
   return (
     <StartButton
       role="button"
+      onClick={onClick}
     >
       <span role="button">{title}</span>
     </StartButton>
   );
 }
 
+StartButtonWindow.defaultProps = {
+  onClick: () => {},
+};
+
 StartButtonWindow.propTypes = {
   title: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };
 
 function ProgramButton({
@@ -146,7 +152,9 @@ ProgramButton.defaultProps = {
   icon: '',
 };
 
-export default function Dock({ activeProgram, dockPrograms, setActiveWindow }) {
+export default function Dock({
+  activeProgram, dockPrograms, setActiveWindow, setError,
+}) {
   const toUpperCaseJustFirstLetter = (word) => word.slice(0, 1)
     .toUpperCase() + word.slice(1).toLowerCase();
 
@@ -165,7 +173,10 @@ export default function Dock({ activeProgram, dockPrograms, setActiveWindow }) {
 
   return (
     <DockBar>
-      <StartButtonWindow title="Start" />
+      <StartButtonWindow
+        onClick={() => setError(true)}
+        title="Danger"
+      />
       <ProgramList>
         {
           dockPrograms.map((item) => (
@@ -190,4 +201,5 @@ Dock.propTypes = {
   activeProgram: PropTypes.string.isRequired,
   dockPrograms: PropTypes.arrayOf.isRequired,
   setActiveWindow: PropTypes.func.isRequired,
+  setError: PropTypes.func.isRequired,
 };

@@ -23,6 +23,8 @@ export default function Desktop() {
   // static, Update as the first opened window changes.
   const [activeProgram, setActiveProgram] = useState(TYPE_ABOUT_WINDOW);
 
+  const [showError, setError] = useState(false);
+
   const removeFromDockPrograms = (window) => {
     const programsCopy = dockPrograms.slice(0);
     const indexOfPrograms = programsCopy.indexOf(window);
@@ -74,18 +76,32 @@ export default function Desktop() {
     removeFromOpenWindows,
   };
 
+  // let errorScreen = null;
+
+  // if (showError) {
+  //   errorScreen = <ErrorScreen setError={setError} />;
+  // }
+
+  if (showError) {
+    return (
+      <DesktopWindow>
+        <ErrorScreen setError={setError} />
+      </DesktopWindow>
+    );
+  }
+
   return (
-    <ErrorScreen />
-    // <WindowsContext.Provider value={state}>
-    //   <DesktopWindow>
-    //     <Icons />
-    //     <WindowsManager openWindows={openWindows} />
-    //     <Dock
-    //       activeProgram={activeProgram}
-    //       dockPrograms={dockPrograms}
-    //       setActiveWindow={setActiveWindow}
-    //     />
-    //   </DesktopWindow>
-    // </WindowsContext.Provider>
+    <WindowsContext.Provider value={state}>
+      <DesktopWindow>
+        <Icons />
+        <WindowsManager openWindows={openWindows} />
+        <Dock
+          setError={setError}
+          activeProgram={activeProgram}
+          dockPrograms={dockPrograms}
+          setActiveWindow={setActiveWindow}
+        />
+      </DesktopWindow>
+    </WindowsContext.Provider>
   );
 }

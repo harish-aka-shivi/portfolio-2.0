@@ -1,88 +1,99 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ContactWindow from './contactWindow';
-import AboutWindow from './aboutWindow';
-import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW, TYPE_WORK_WINDOW } from './constants';
-import WorkWindow from './workWindow';
 
 const WindowsContainer = styled.div`
   height: 100vh;
   width: 100vw;
-  /* position:absolute;
-  top:0;
-  left:0; */
 `;
 
 const initialState = {
   windows: [],
-  pos: { x: 100, y: 100 },
+  pos: { x: 10, y: 10 },
+  aboutPos: { x: window.screen.width, y: 0 },
+  done: false,
+  aboutWindows: [],
+  yIncrement: 30,
 };
 
 function reducer(state, action) {
-  const { windows, pos } = state;
+  const {
+    windows,
+    pos,
+    done,
+    aboutPos,
+    aboutWindows,
+    yIncrement,
+  } = state;
   if (action.type === 'increment') {
-    if (windows.length < 4) {
-      return { pos: { x: pos.x + 10, y: pos.y + 10 }, windows };
+    if (windows.length < 50) {
+      let yIncrementTemp = yIncrement;
+      if (pos.y >= window.screen.height / 2 && Math.sign(yIncrement) === 1) {
+        yIncrementTemp = -1 * yIncrement;
+      } else if (pos.y < 0 && Math.sign(yIncrement) === -1) {
+        yIncrementTemp = Math.abs(yIncrement);
+      }
+      return {
+        pos: { x: pos.x + 15, y: pos.y + yIncrement },
+        windows,
+        done,
+        aboutWindows,
+        aboutPos,
+        yIncrement: yIncrementTemp,
+      };
     }
-    return { pos, windows };
-  } else if (action.type === 'windows') {
+    return {
+      pos, windows, done: true, aboutPos, aboutWindows, yIncrement,
+    };
+  }
+  if (action.type === 'windows') {
     const newWindows = windows.concat({ x: pos.x, y: pos.y });
-    return { windows: newWindows, pos };
+    const newAboutWindows = aboutWindows.concat({ x: aboutPos.x, y: aboutPos.y });
+    return {
+      windows: newWindows, pos, done, aboutWindows: newAboutWindows, aboutPos, yIncrement,
+    };
   }
   return initialState;
 }
 
-function ErrorScreen() {
+function ErrorScreen({ setError }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { windows, pos } = state;
-  // const [windows, setWindows] = useState([]);
-  // const [x, setX] = useState(100);
-  // const [y, setY] = useState(100);
+  const {
+    windows, pos, done,
+  } = state;
 
-  // const [pos, setPos] = useState({ x: 100, y: 100 });
+  if (done) {
+    setError(false);
+  }
 
   useEffect(() => {
     const intervalId = setInterval((() => {
       dispatch({ type: 'increment' });
-      // console.log(x, y, windows.length);
-      // const newWindows = windows.concat({ x: x + 10, y: y + 10 });
-      // console.log(windows, newWindows);
-      // setWindows(newWindows);
-      // setX(x + 10);
-      // setY(y + 10);
-      // setPos((posCallback) => ({ x: posCallback.x + 10, y: posCallback.y + 10 }));
-    }), 2000);
+    }), 20);
     return () => clearInterval(intervalId);
   }, []);
 
   useEffect(() => {
     dispatch({ type: 'windows' });
-    // const newWindows = windows.concat({ x: pos.x, y: pos.y });
-    // console.log(windows, newWindows, pos);
-    // setWindows(newWindows);
   }, [pos]);
-
-  // const [contactPosition, setContactPosition] = useState({ x: windowWidth / 5, y: 100 });
-  // const [aboutPosition, setAboutPosition] = useState({ x: windowWidth / 2, y: 100 });
-  // const [workPosition, setWorkPosition] = useState({ x: windowWidth / 3, y: windowHeight / 4 });
-
   return (
     <WindowsContainer>
       {windows.map((window, index) => (
-        <ContactWindow
-          controlledPosition={window}
-          // setControlledPosition={window}
-          key={index}
-        />
+        <div>
+          <ContactWindow
+            controlledPosition={window}
+            // eslint-disable-next-line react/no-array-index-key
+            key={`${window.x}${window.y}${index}`}
+          />
+        </div>
       ))}
     </WindowsContainer>
   );
 }
 
 ErrorScreen.propTypes = {
-  // openWindows: PropTypes.arrayOf(PropTypes.oneOfType(PropTypes.string))
-  //   .isRequired,
+  setError: PropTypes.func.isRequired,
 };
 
 export default ErrorScreen;
