@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ContactWindow from './contactWindow';
+import ErrorWindow from './errorWindow';
 
 const WindowsContainer = styled.div`
   height: 100vh;
@@ -81,7 +81,7 @@ function ErrorScreen({ setError }) {
     <WindowsContainer>
       {windows.map((window, index) => (
         <div>
-          <ContactWindow
+          <ErrorWindow
             controlledPosition={window}
             // eslint-disable-next-line react/no-array-index-key
             key={`${window.x}${window.y}${index}`}

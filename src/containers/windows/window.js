@@ -47,7 +47,7 @@ const ToolbarTitle = styled.div`
   align-items: center;
   color: #fff;
   font-size: 16px;
-  /* margin-top: 2px; */
+  font-weight: 600;
   min-width: 160px;
   vertical-align: middle;
 `;
@@ -76,9 +76,23 @@ const CloseButton = styled.a`
   width: 30px;
 `;
 
-const CloseImage = styled.img`
+const CloseImage = styled.div`
   height: 30px;
   width: 30px;
+  display: inline-block;
+  font-weight: 700;
+  color: #000;
+  font-size: 13px;
+  font-family: sans-serif;
+  background: #bdbdbd;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,.25), inset 2px 2px 0 hsla(0,0%,100%,.8);
 `;
 
 function Content({ children }) {
@@ -100,7 +114,7 @@ function Toolbar({ children, icon, onClose }) {
             }
           }}
         >
-          <CloseImage src={close} alt="Close window" />
+          <CloseImage src={close} alt="Close window"> X </CloseImage>
         </CloseButton>
       </ToolbarStyle>
     </div>

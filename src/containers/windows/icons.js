@@ -25,6 +25,9 @@ const IconButton = styled.button`
   letter-spacing:1px;
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  outline-color: orange;
+
+  /* :focus {outline:0;} */
 `;
 
 const IconImage = styled.img`
