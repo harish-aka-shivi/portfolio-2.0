@@ -5,20 +5,23 @@ import Timer from './timer';
 import account from './icons/account.svg';
 import work from './icons/work.svg';
 import mail from './icons/mail.svg';
+import alert from './icons/alert.svg';
+import windows from './icons/windows.svg';
+import Dropdown from '../../components/Dropdown';
 
 const StartButton = styled.div`
   font-family: Anonymous Pro,monospace;
   display: inline-block;
   font-size: 1.1em;
   font-weight: 700;
-  padding: 10px 15px 10px 13px;
+  /* padding: 10px 15px 10px 13px; */
   color: #000;
   vertical-align: middle;
   -webkit-appearance: initial;
   border: none;
-  padding-top: ${(props) => (props.active ? '12px ' : '10px')};
-  padding-bottom: ${(props) => (props.active ? '8px ' : '10px')};
-  background: ${(props) => (props.active ? '#e6e6e6' : '')};
+  /* padding-top: ${(props) => (props.active ? '12px ' : '10px')}; */
+  /* padding-bottom: ${(props) => (props.active ? '8px ' : '10px')}; */
+  /* background: ${(props) => (props.active ? '#e6e6e6' : '')}; */
   box-shadow: ${(props) => (props.active
     ? 'inset 2px 2px 0 #000, 1px 1px 0 #fff, inset -2px -2px 0 #ddd, inset 4px 4px 0 #888'
     : 'inset 3px 3px 0 hsla(0, 0%, 100%, 0.8), inset -3px -3px 0 rgba(0, 0, 0, 0.25), 2px 2px 0 #000;')}; 
@@ -67,48 +70,76 @@ const DockBar = styled.section`
 `;
 
 const ProgramList = styled.div`
-  float: left;
-  margin-left: 10px;
-  padding-left: 10px;
-  position: relative;
+  float:left;
+  margin-left:10px;
+  padding-left:10px;
+  position:relative;
 
   &:before {
-    position: absolute;
-    top: 1px;
-    left: 0;
-    display: block;
-    content: "";
-    height: 99%;
-    width: 1px;
-    border-left: 2px solid hsla(0,0%,100%,.8);
-    border-right: 2px solid rgba(0,0,0,.25);
-    /* margin-bottom: 8px; */
+    position:absolute;
+    top:1px;
+    left:0;
+    display:block;
+    content:"";
+    height:99%;
+    width:1px;
+    border-left:2px solid hsla(0,0%,100%,.8);
+    border-right:2px solid rgba(0,0,0,.25);
+    /* margin-bottom:8px; */
   }
 `;
 
 const TimerContainer = styled.div`
-  font-size: 1.1em;
-  float: right;
-  font-weight: 700;
-  box-shadow: inset 3px 3px 0 rgba(0,0,0,.25), 2px 2px 0 hsla(0,0%,100%,.8);
-  margin-top: -3px;
-  margin-right: 5px;
-  padding: 15px 20px 11px;
+  font-size:1.1em;
+  float:right;
+  font-weight:700;
+  box-shadow:inset 3px 3px 0 rgba(0,0,0,.25), 2px 2px 0 hsla(0,0%,100%,.8);
+  margin-top:-3px;
+  margin-right:5px;
+  padding:15px 20px 11px;
 `;
 
 const ProgramButtonIcon = styled.img`
-  height:10px;
-  width:10px;
-  margin-right: 10px;
+  height:12px;
+  width:12px;
+  margin-right:10px;
 `;
 
-function StartButtonWindow({ title, onClick }) {
+const MenuItemRoot = styled.div`
+  display:flex;
+  width:100%;
+  align-items:center;
+  cursor:pointer;
+  user-select:none;
+  white-space:nowrap;
+`;
+
+const MenuItemImage = styled.img`
+  height:15px;
+  width:15px;
+  margin-right:10px;
+`;
+
+function MenuItem({ onClick }) {
+  return (
+    <MenuItemRoot onClick={onClick}>
+      <MenuItemImage src={alert} />
+      <span>Do not press!!</span>
+    </MenuItemRoot>
+  );
+}
+
+
+function StartButtonWindow({ onClick }) {
   return (
     <StartButton
       role="button"
-      onClick={onClick}
     >
-      <span role="button">{title}</span>
+      <Dropdown title="Start" icon={windows}>
+        <Dropdown.DropDownContent>
+          <MenuItem onClick={onClick} />
+        </Dropdown.DropDownContent>
+      </Dropdown>
     </StartButton>
   );
 }
@@ -118,7 +149,6 @@ StartButtonWindow.defaultProps = {
 };
 
 StartButtonWindow.propTypes = {
-  title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 
@@ -140,17 +170,6 @@ function ProgramButton({
     </ProgramButtonStyle>
   );
 }
-
-ProgramButton.propTypes = {
-  title: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
-  icon: PropTypes.string,
-};
-
-ProgramButton.defaultProps = {
-  icon: '',
-};
 
 export default function Dock({
   activeProgram, dockPrograms, setActiveWindow, setError,
@@ -202,4 +221,19 @@ Dock.propTypes = {
   dockPrograms: PropTypes.arrayOf.isRequired,
   setActiveWindow: PropTypes.func.isRequired,
   setError: PropTypes.func.isRequired,
+};
+
+ProgramButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  icon: PropTypes.string,
+};
+
+ProgramButton.defaultProps = {
+  icon: '',
+};
+
+MenuItem.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };

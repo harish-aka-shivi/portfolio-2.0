@@ -12,12 +12,12 @@ const StartButton = styled.div`
   font-size: 1.1em;
   font-weight: 700;
   color: #000;
-  padding: 10px 15px 10px 13px;
+  padding: 8px 15px 8px 13px;
   vertical-align: middle;
   -webkit-appearance: initial;
   border: none;
-  padding-top: ${(props) => (props.active ? '12px ' : '10px')};
-  padding-bottom: ${(props) => (props.active ? '8px ' : '10px')};
+  cursor: pointer;
+  user-select:none;
   background: ${(props) => (props.active ? '#e6e6e6' : '')};
   box-shadow: ${(props) => (props.active
     ? 'inset 2px 2px 0 #000, 1px 1px 0 #fff, inset -2px -2px 0 #ddd, inset 4px 4px 0 #888'
@@ -25,35 +25,80 @@ const StartButton = styled.div`
 `;
 
 
-const DropDownContent = styled.div`
+const DropDownContentInternal = styled.div`
   display: ${(props) => (props.open ? 'block' : 'none')};
   position: absolute;
-  background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
+  background: #bdbdbd;
+  bottom:45px;
+  padding-top: 12px; 
+  left: 0px;
+  padding-bottom: 12px;
+  box-shadow: ${(props) => (props.active
+    ? 'inset 2px 2px 0 #000, 1px 1px 0 #fff, inset -2px -2px 0 #ddd, inset 4px 4px 0 #888'
+    : 'inset 3px 3px 0 hsla(0, 0%, 100%, 0.8), inset -3px -3px 0 rgba(0, 0, 0, 0.25), 2px 2px 0 #000;')}; 
 `;
 
-function Dropdown({ title }) {
+const ProgramButtonIcon = styled.img`
+  height:12px;
+  width:12px;
+  margin-right:10px;
+`;
+
+const DropdownContext = React.createContext();
+
+
+function DropDownContent({ children }) {
+  return (
+    <DropdownContext.Consumer>
+      {({ active }) => (
+        <DropDownContentInternal open={active}>
+          {children}
+        </DropDownContentInternal>
+      )}
+    </DropdownContext.Consumer>
+  );
+}
+
+function Dropdown({ title, children, icon }) {
+  const [active, setActive] = React.useState(false);
+  const onClick = () => {
+    setActive(!active);
+  };
   return (
     <StartButtonContainer>
-      <StartButton>
-        <span role="button">{title}</span>
-      </StartButton>
-      <DropDownContent open>
-        Demo
-      </DropDownContent>
+      <DropdownContext.Provider value={{ active, setActive }}>
+        <StartButton onClick={onClick} active={active}>
+          { icon && <ProgramButtonIcon src={icon} />}
+          <span role="button">{title}</span>
+        </StartButton>
+        {children}
+      </DropdownContext.Provider>
     </StartButtonContainer>
   );
 }
 
 Dropdown.defaultProps = {
   title: '',
+  children: [],
+  icon: '',
 };
 
 Dropdown.propTypes = {
   title: PropTypes.string,
+  children: PropTypes.element,
+  icon: PropTypes.string,
 };
 
+DropDownContent.defaultProps = {
+  children: null,
+};
+
+DropDownContent.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element),
+};
+
+Dropdown.DropDownContent = DropDownContent;
 export default Dropdown;
