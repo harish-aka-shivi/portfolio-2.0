@@ -19,14 +19,14 @@ export default function AboutWindow({
           setControlledPosition={setControlledPosition}
           handleOnMouseDown={() => setActiveWindow(TYPE_ABOUT_WINDOW)}
         >
-          <Window>
+          <Window width={450}>
             <Window.Toolbar
               icon={account}
               onClose={() => removeFromOpenWindows(TYPE_ABOUT_WINDOW)}
             >
               <> About </>
             </Window.Toolbar>
-            <Window.Content width={420}>
+            <Window.Content>
               <AboutBody />
             </Window.Content>
           </Window>

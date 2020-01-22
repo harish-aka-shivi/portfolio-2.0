@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import close from './icons/close.png';
 
-const WindowRoot = styled.div`
+const WindowRoot = styled.article`
   width: 100vw;
   height:100vh;
   cursor: default;
@@ -61,13 +61,12 @@ const ToolbarIcon = styled.img`
 const ContentStyle = styled.div`
   margin-top: 7px;
   width: calc(100% - 30px);
-  /* position:relative; */
-  /* width:100%;  */
   padding: 10px;
-  /* min-height: 200px; */
   min-height:83%;
   margin-left: 3px;
   background: ${(props) => (props.backgroundColor)};
+  overflow-y: scroll;
+  max-height:60vh;
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
 `;
 
