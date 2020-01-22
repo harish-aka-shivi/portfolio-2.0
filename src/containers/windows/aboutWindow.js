@@ -26,7 +26,7 @@ export default function AboutWindow({
             >
               <> About </>
             </Window.Toolbar>
-            <Window.Content>
+            <Window.Content width={420}>
               <AboutBody />
             </Window.Content>
           </Window>

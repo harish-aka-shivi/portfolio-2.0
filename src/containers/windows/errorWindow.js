@@ -90,7 +90,6 @@ ErrorWindow.propTypes = {
     x: PropTypes.number,
     y: PropTypes.number,
   }).isRequired,
-  // setControlledPosition: PropTypes.func.isRequired,
 };
 
 export default ErrorWindow;

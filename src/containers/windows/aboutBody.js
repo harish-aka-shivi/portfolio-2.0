@@ -8,8 +8,15 @@ import node from './icons/node.svg';
 import reactnative from './icons/react-native.svg';
 import react from './icons/react.svg';
 
-const AboutRoot = styled.article`
+const ResponsiveRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
+const AboutRoot = styled.article`
+  max-width: 400px;
 `;
 
 const Title = styled.h3`
@@ -63,6 +70,10 @@ const AboutBodyRoot = styled.div`
   padding:8px;
 `;
 
+const ListItem = styled.li`
+  white-space: nowrap;
+`;
+
 function SkillItem({ title, icon, alt }) {
   return (
     <SocialRoot>
@@ -86,50 +97,78 @@ SkillItem.propTypes = {
 
 function AboutBody() {
   return (
-    <AboutBodyRoot>
-      <AboutRoot>
-        <Title>
+    <ResponsiveRoot>
+      <AboutBodyRoot>
+        <AboutRoot>
+          <Title>
           Harish Rana
-        </Title>
-        <Content>
-          Working on web, mobile and everything in between.
-        </Content>
-      </AboutRoot>
-        ===================================
-      <Skills>
-        <SkillTitle>Skills</SkillTitle>
-        <SkillBody>
-          <SkillTable>
-            <tbody>
-              <TableRow>
-                <TableD>
-                  <SkillItem title="Android" icon={android} alt="Android" />
-                </TableD>
-                <TableD>
-                  <SkillItem title="React" icon={react} alt="React" />
-                </TableD>
-              </TableRow>
-              <TableRow>
-                <TableD>
-                  <SkillItem title="React Native" icon={reactnative} alt="React Native" />
-                </TableD>
-                <TableD>
-                  <SkillItem title="Node" icon={node} alt="Node" />
-                </TableD>
-              </TableRow>
-              <TableRow>
-                <TableD>
-                  <SkillItem title="Javascript" icon={javascript} alt="Javascript" />
-                </TableD>
-                <TableD>
-                  <SkillItem title="Java" icon={java} alt="Java" />
-                </TableD>
-              </TableRow>
-            </tbody>
-          </SkillTable>
-        </SkillBody>
-      </Skills>
-    </AboutBodyRoot>
+          </Title>
+          <Content>
+          Hey there,
+            <br />
+          Few things about me:
+
+            <ul>
+              <ListItem>
+                {' '}
+              Likes to work on Mobile
+                {' '}
+                <span role="img" aria-label="mobile">📱</span>
+                {' '}
+              and Web
+                <span role="img" aria-label="web"> 🕸️</span>
+              </ListItem>
+              <ListItem>
+                {' '}
+              Have been working-out since last 18 months
+                <span role="img" aria-label="work out">💪</span>
+              </ListItem>
+              <ListItem>
+                {' '}
+              Fan of Yoga
+                <span role="img" aria-label="yoga">🧘‍♂️</span>
+              and can do a headstand.
+                {' '}
+                <span role="img" aria-label="head-stand">🤸‍♂️</span>
+              </ListItem>
+            </ul>
+          </Content>
+        </AboutRoot>
+        <Skills>
+          <SkillTitle>Skills</SkillTitle>
+          <SkillBody>
+            <SkillTable>
+              <tbody>
+                <TableRow>
+                  <TableD>
+                    <SkillItem title="Android" icon={android} alt="Android" />
+                  </TableD>
+                  <TableD>
+                    <SkillItem title="React" icon={react} alt="React" />
+                  </TableD>
+                </TableRow>
+                <TableRow>
+                  <TableD>
+                    <SkillItem title="React Native" icon={reactnative} alt="React Native" />
+                  </TableD>
+                  <TableD>
+                    <SkillItem title="Node" icon={node} alt="Node" />
+                  </TableD>
+                </TableRow>
+                <TableRow>
+                  <TableD>
+                    <SkillItem title="Javascript" icon={javascript} alt="Javascript" />
+                  </TableD>
+                  <TableD>
+                    <SkillItem title="Java" icon={java} alt="Java" />
+                  </TableD>
+                </TableRow>
+              </tbody>
+            </SkillTable>
+          </SkillBody>
+        </Skills>
+      </AboutBodyRoot>
+    </ResponsiveRoot>
   );
 }
 

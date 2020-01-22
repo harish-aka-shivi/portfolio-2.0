@@ -4,8 +4,8 @@ import DraggableWindow from './draggableWindow';
 import Window from './window';
 import WindowContext from './windowsContext';
 import { TYPE_WORK_WINDOW } from './constants';
-import ContactBody from './contactBody';
 import work from './icons/work.svg';
+import WorkBody from './workBody';
 
 export default function WorkWindow({
   controlledPosition,
@@ -19,16 +19,17 @@ export default function WorkWindow({
           setControlledPosition={setControlledPosition}
           handleOnMouseDown={() => setActiveWindow(TYPE_WORK_WINDOW)}
         >
-          <Window>
+          <Window width={600}>
             <Window.Toolbar
               icon={work}
               onClose={() => removeFromOpenWindows(TYPE_WORK_WINDOW)}
             >
               <> Work </>
             </Window.Toolbar>
-            <Window.Content>
-              <p>Hey, Please contact me on these links:</p>
-              <ContactBody />
+            <Window.Content
+              backgroundColor="#bdbdbd"
+            >
+              <WorkBody />
             </Window.Content>
           </Window>
         </DraggableWindow>

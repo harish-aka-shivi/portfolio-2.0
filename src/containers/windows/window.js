@@ -67,7 +67,7 @@ const ContentStyle = styled.div`
   /* min-height: 200px; */
   min-height:83%;
   margin-left: 3px;
-  background: #fff;
+  background: ${(props) => (props.backgroundColor)};
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
 `;
 
@@ -95,8 +95,8 @@ const CloseImage = styled.div`
   box-shadow: inset -2px -2px 0 rgba(0,0,0,.25), inset 2px 2px 0 hsla(0,0%,100%,.8);
 `;
 
-function Content({ children }) {
-  return <ContentStyle>{children}</ContentStyle>;
+function Content({ children, backgroundColor }) {
+  return <ContentStyle backgroundColor={backgroundColor}>{children}</ContentStyle>;
 }
 
 function Toolbar({ children, icon, onClose }) {
@@ -126,8 +126,13 @@ function Window({ children, height, width }) {
   return <WindowRoot height={height} width={width}>{children}</WindowRoot>;
 }
 
+Content.defaultProps = {
+  backgroundColor: 'white',
+};
+
 Content.propTypes = {
   children: PropTypes.arrayOf.isRequired,
+  backgroundColor: PropTypes.string,
 };
 
 Window.propTypes = {

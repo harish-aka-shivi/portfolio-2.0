@@ -26,8 +26,6 @@ const IconButton = styled.button`
   text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   outline-color: orange;
-
-  /* :focus {outline:0;} */
 `;
 
 const IconImage = styled.img`
@@ -36,8 +34,6 @@ const IconImage = styled.img`
   display: block;
   margin-bottom: 12px;
 `;
-
-// <a target="_blank" href="/icons/set/windows-live-mail">Windows Live Mail icon</a> by <a target="_blank" href="https://icons8.com">Icons8</a>
 
 function Icon({ title, image, onButtonClick }) {
   return (
