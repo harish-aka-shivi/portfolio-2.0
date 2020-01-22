@@ -8,7 +8,7 @@ import WindowsContext from './windowsContext';
 
 const ErrorBodyRoot = styled.div`
   background-color: #bdbdbd;
-  margin: -10px;
+  margin: -20px;
   min-height: 100px;
   display: flex;
   flex-direction: column;

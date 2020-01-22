@@ -60,8 +60,8 @@ const ToolbarIcon = styled.img`
 
 const ContentStyle = styled.div`
   margin-top: 7px;
-  width: calc(100% - 30px);
-  padding: 10px;
+  width: calc(100% - 50px);
+  padding: 20px;
   min-height:83%;
   margin-left: 3px;
   background: ${(props) => (props.backgroundColor)};

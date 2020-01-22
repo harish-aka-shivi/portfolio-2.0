@@ -37,7 +37,7 @@ const Content = styled.p`
 `;
 
 const RandomFactTitle = styled.div`
-  padding-inline-start: 10px;
+  /* padding-inline-start: 10px; */
 `;
 
 
@@ -58,7 +58,9 @@ const SkillBody = styled.div`
   width: 100%;
 `;
 
-const SkillTable = styled.table``;
+const SkillTable = styled.table`
+  width: 100%;
+`;
 
 const TableRow = styled.tr`
   width:100%;
@@ -69,6 +71,9 @@ const SocialRoot = styled.div`
   flex-direction:row;
   justify-content:flex-start;
   align-items:center;
+  width : 50%;
+  margin: 0 auto;
+  white-space: nowrap;
 `;
 
 const Icon = styled.img`
@@ -81,16 +86,16 @@ const SkillRowTitle = styled.strong`
 `;
 
 const TableD = styled.td`
-  width:30%;
+  width:50%;
   padding-bottom:16px;
-  padding-left: 2em;
+  /* padding-left: 2em; */
 `;
 
 const AboutBodyRoot = styled.div`
   padding:8px;
   width: 100%;
-  padding-left: 2em;
-  padding-right: 2em;
+  /* padding-left: 2em; */
+  /* padding-right: 2em; */
 `;
 
 const Description = styled.div`
@@ -101,7 +106,7 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-inline-start: 20px;
+  /* padding-inline-start: 20px; */
 `;
 
 const ListItem = styled.li`
@@ -151,7 +156,7 @@ function AboutBody() {
               I am software developer from India
               <span role="img" aria-label="India"> 🇮🇳</span>
               with an experience of 4 years.
-              Currently I am an Engineering Fellow at
+              Currently, I am an Engineering Fellow at
               <span> </span>
               <span> </span>
               <a href="https://www.pesto.tech">Pesto</a>

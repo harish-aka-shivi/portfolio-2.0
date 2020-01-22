@@ -4,7 +4,7 @@ import Dock from './dock';
 import Icons from './icons';
 import WindowsManager from './windowsManager';
 import WindowsContext from './windowsContext';
-import { TYPE_CONTACT_WINDOW, TYPE_ABOUT_WINDOW, TYPE_WORK_WINDOW } from './constants';
+import { TYPE_ABOUT_WINDOW } from './constants';
 import ErrorScreen from './errorScreen';
 
 const DesktopWindow = styled.section`

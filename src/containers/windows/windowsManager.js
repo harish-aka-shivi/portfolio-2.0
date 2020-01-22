@@ -18,7 +18,9 @@ function WindowsManager({ openWindows }) {
   const windowWidth = window.screen.width;
   const windowHeight = window.screen.height;
   const [contactPosition, setContactPosition] = useState({ x: windowWidth / 5, y: 50 });
-  const [aboutPosition, setAboutPosition] = useState({ x: windowWidth / 2.2, y: windowHeight / 4 });
+  const [aboutPosition, setAboutPosition] = useState(
+    { x: windowWidth / 3.5, y: windowHeight / 11 },
+  );
   const [workPosition, setWorkPosition] = useState({ x: windowWidth / 2.5, y: 30 });
 
   return (
