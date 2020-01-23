@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "031dd4f4b67c4db63dce1e90b7b3a675",
+    "revision": "e99f00356f8de05881cfd892128a0899",
     "url": "/portfolio-2.0/index.html"
   },
   {
-    "revision": "b88a9392915cde0c715f",
+    "revision": "57cd4c6479c10439f734",
     "url": "/portfolio-2.0/static/css/main.34de6062.chunk.css"
   },
   {
-    "revision": "0944f44fcaa7db68dcbd",
-    "url": "/portfolio-2.0/static/js/2.82c644ff.chunk.js"
+    "revision": "86795c37e55ad5d8a1be",
+    "url": "/portfolio-2.0/static/js/2.711a7b63.chunk.js"
   },
   {
-    "revision": "b88a9392915cde0c715f",
-    "url": "/portfolio-2.0/static/js/main.a6063e10.chunk.js"
+    "revision": "57cd4c6479c10439f734",
+    "url": "/portfolio-2.0/static/js/main.a6ae243c.chunk.js"
   },
   {
     "revision": "0025e6b95168707d8a31",
     "url": "/portfolio-2.0/static/js/runtime-main.738c8c4a.js"
   },
   {
-    "revision": "140dc054735460d718d7a641b977e111",
-    "url": "/portfolio-2.0/static/media/account.140dc054.svg"
+    "revision": "36204529ec8a7c721052ab69f1a6a233",
+    "url": "/portfolio-2.0/static/media/account.36204529.svg"
   },
   {
     "revision": "fb805a09cedc7c53cc498384a846f3df",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-2.0/static/media/linkedin.4a17602a.svg"
   },
   {
-    "revision": "5bb8bf90acb4aa183716204b1e62abc8",
-    "url": "/portfolio-2.0/static/media/mail.5bb8bf90.svg"
+    "revision": "5897a34c75f6810b539519e9b831e0e3",
+    "url": "/portfolio-2.0/static/media/mail.5897a34c.svg"
   },
   {
     "revision": "895b826814b9f54f8175803cb4846678",
@@ -68,12 +68,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-2.0/static/media/node.9d7b3072.svg"
   },
   {
+    "revision": "dc9765a84c15b82153d0671664736de6",
+    "url": "/portfolio-2.0/static/media/projects.dc9765a8.svg"
+  },
+  {
     "revision": "4c9b13d37d92c7a84af4691500289397",
     "url": "/portfolio-2.0/static/media/react-native.4c9b13d3.svg"
   },
   {
     "revision": "231a2667af760f06ab0f54e3b66d01f2",
     "url": "/portfolio-2.0/static/media/react.231a2667.svg"
+  },
+  {
+    "revision": "4f96076fcc19a81df2aa9cae47560b1f",
+    "url": "/portfolio-2.0/static/media/snake.4f96076f.svg"
   },
   {
     "revision": "6c15e1259464e5f097bc8f32f848294d",
