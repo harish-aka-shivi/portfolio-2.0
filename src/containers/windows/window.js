@@ -55,6 +55,7 @@ const ToolbarTitle = styled.div`
 const ToolbarIcon = styled.img`
   height:15%;
   width:15%;
+  margin-right: 0.5em;
   user-select:none;
 `;
 

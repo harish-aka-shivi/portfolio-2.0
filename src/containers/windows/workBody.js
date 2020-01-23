@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import vistoso from './icons/vistoso.png';
 import fashin from './icons/fashin.png';
+import snake from './icons/snake.svg';
 
 const RootDiv = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const ProjectRoot = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  flex-grow: 0.3;
+  /* flex-grow: 0.3; */
   display:flex;
   padding: 0.4em;
 `;
@@ -56,6 +57,10 @@ const Title = styled.div`
 `;
 
 const Content = styled.div`
+`;
+
+const ProjectSummary = styled.div`
+  padding: 8px;
 `;
 
 function ProjectItem({
@@ -95,6 +100,10 @@ ProjectItem.propTypes = {
 function WorkBody() {
   return (
     <RootDiv>
+      <ProjectSummary>
+        These are a collection of some projects I worked on professionally and personally
+      </ProjectSummary>
+
       <ProjectItem
         imageSrc={vistoso}
         title="Vistoso"
@@ -107,6 +116,13 @@ function WorkBody() {
         title="Fashin"
         openUrl="https://play.google.com/store/apps/details?id=com.fashin.android"
         description="Fashin is an android app where you can get recommendation of clothes just by clicking the picture of the clothes you like"
+      />
+
+      <ProjectItem
+        imageSrc={snake}
+        title="Snake Game"
+        openUrl="https://harish-aka-shivi.github.io/snake/"
+        description="Classic retro snake game. Enjoy"
       />
 
     </RootDiv>

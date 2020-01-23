@@ -50,7 +50,7 @@ const Skills = styled.div`
 `;
 
 const SkillTitle = styled.h2`
-  margin-bottom:12px;
+  margin-bottom:30px;
   margin-top: 2px
 `;
 
@@ -153,9 +153,9 @@ function AboutBody() {
 
           <Description>
             <div>
-              I am software developer from India
+              I am a software developer from India
               <span role="img" aria-label="India"> 🇮🇳</span>
-              with an experience of 4 years.
+              with an experience of around 4 years.
               Currently, I am an Engineering Fellow at
               <span> </span>
               <span> </span>
@@ -178,7 +178,7 @@ function AboutBody() {
               <ListItem>
               Working-out
                 <span role="img" aria-label="work out"> 💪</span>
-              for the last 14 months and counting.
+              for the past 14 months and counting.
               </ListItem>
               <ListItem>
               Yoga enthusiast

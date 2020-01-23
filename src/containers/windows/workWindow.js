@@ -24,7 +24,7 @@ export default function WorkWindow({
               icon={work}
               onClose={() => removeFromOpenWindows(TYPE_WORK_WINDOW)}
             >
-              <> Work </>
+              <> Projects </>
             </Window.Toolbar>
             <Window.Content
               backgroundColor="#bdbdbd"
