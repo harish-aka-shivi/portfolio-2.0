@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import account from './icons/account.svg';
 import mail from './icons/mail.svg';
-import projects from './icons/projects.svg';
+import projects from './icons/work.svg';
 import WindowsContext from './windowsContext';
 import { TYPE_ABOUT_WINDOW, TYPE_CONTACT_WINDOW, TYPE_WORK_WINDOW } from './constants';
 
