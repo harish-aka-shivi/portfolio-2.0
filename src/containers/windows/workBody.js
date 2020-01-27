@@ -9,7 +9,7 @@ const RootDiv = styled.div`
   display: flex;
   flex-direction: column;
   max-width:600px;
-  background-color: #bdbdbd;
+  background-color: white;
   > * + *{
     margin-top: 0.5em;
   }
@@ -19,9 +19,6 @@ const ProjectRoot = styled.div`
   display: flex;
   flex-direction: row;
   flex: 1;
-  box-shadow: -1px -1px 0 #f2f2f2, inset -2px -2px 0 rgba(0, 0, 0, 0.25);
-
-  /* margin: 4px; */
 `;
 
 const ImageContainer = styled.div`
@@ -35,7 +32,7 @@ const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-left: 0.4em;
+  padding-left: 2em;
   padding-right: 0.4em;
   padding-top: 0.4em;
   padding-bottom: 0.4em;
@@ -48,7 +45,11 @@ const Image = styled.img`
   max-height: 90px;
   object-fit: cover;
   padding: 0.1em;
-  box-shadow: -1px -1px 0 #f2f2f2, inset -2px -2px 0 rgba(0, 0, 0, 0.25);
+  /* box-shadow: -1px -1px 0 #f2f2f2, inset -2px -2px 0 rgba(0, 0, 0, 0.25); */
+`;
+
+const Link = styled.a`
+  text-decoration: none;
 `;
 
 const Title = styled.div`
@@ -58,6 +59,14 @@ const Title = styled.div`
 
 const Content = styled.div`
 `;
+
+// const TitleContainer = styled.div`
+//   font-weight: 600;
+//   font-size: 1.3em;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// `;
 
 const ProjectSummary = styled.div`
   padding: 8px;
@@ -72,15 +81,17 @@ function ProjectItem({
   return (
     <ProjectRoot>
       <ImageContainer>
-        <Image alt={title} src={imageSrc} />
+        <Link href={openUrl} target="_blank" rel="noopener noreferrer">
+          <Image alt={title} src={imageSrc} />
+        </Link>
       </ImageContainer>
 
       <DescriptionContainer>
-        <a href={openUrl} target="_blank" rel="noopener noreferrer">
+        <Link href={openUrl} target="_blank" rel="noopener noreferrer">
           <Title>
             {title}
           </Title>
-        </a>
+        </Link>
         <Content>
           {description}
         </Content>
@@ -106,21 +117,21 @@ function WorkBody() {
 
       <ProjectItem
         imageSrc={vistoso}
-        title="Vistoso"
+        title="Vistoso 🖌️ 📷"
         openUrl="https://play.google.com/store/apps/details?id=com.staqu.vistoso"
         description="An android app to apply fun filters and stickers on your image"
       />
 
       <ProjectItem
         imageSrc={fashin}
-        title="Fashin"
+        title="Fashin 👗 👖"
         openUrl="https://play.google.com/store/apps/details?id=com.fashin.android"
         description="Fashin is an android app where you can get recommendation of clothes just by clicking the picture of the clothes you like"
       />
 
       <ProjectItem
         imageSrc={snake}
-        title="Snake Game"
+        title="Snake Game 🎮 🕹️"
         openUrl="https://harish-aka-shivi.github.io/snake/"
         description="Classic retro snake game. Enjoy"
       />

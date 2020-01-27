@@ -26,9 +26,7 @@ export default function WorkWindow({
             >
               <> Projects </>
             </Window.Toolbar>
-            <Window.Content
-              backgroundColor="#bdbdbd"
-            >
+            <Window.Content>
               <WorkBody />
             </Window.Content>
           </Window>
