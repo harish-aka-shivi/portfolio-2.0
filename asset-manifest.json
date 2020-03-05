@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/portfolio-2.0/static/css/main.34de6062.chunk.css",
-    "main.js": "/portfolio-2.0/static/js/main.9607c1c4.chunk.js",
-    "main.js.map": "/portfolio-2.0/static/js/main.9607c1c4.chunk.js.map",
+    "main.js": "/portfolio-2.0/static/js/main.81cbc098.chunk.js",
+    "main.js.map": "/portfolio-2.0/static/js/main.81cbc098.chunk.js.map",
     "runtime-main.js": "/portfolio-2.0/static/js/runtime-main.738c8c4a.js",
     "runtime-main.js.map": "/portfolio-2.0/static/js/runtime-main.738c8c4a.js.map",
-    "static/js/2.3c00d2c5.chunk.js": "/portfolio-2.0/static/js/2.3c00d2c5.chunk.js",
-    "static/js/2.3c00d2c5.chunk.js.map": "/portfolio-2.0/static/js/2.3c00d2c5.chunk.js.map",
+    "static/js/2.5a6da6e4.chunk.js": "/portfolio-2.0/static/js/2.5a6da6e4.chunk.js",
+    "static/js/2.5a6da6e4.chunk.js.map": "/portfolio-2.0/static/js/2.5a6da6e4.chunk.js.map",
     "index.html": "/portfolio-2.0/index.html",
-    "precache-manifest.ddf2db4b01566584b336e3ac1df33a81.js": "/portfolio-2.0/precache-manifest.ddf2db4b01566584b336e3ac1df33a81.js",
+    "precache-manifest.54b109cffaacd833347a192d495e67a7.js": "/portfolio-2.0/precache-manifest.54b109cffaacd833347a192d495e67a7.js",
     "service-worker.js": "/portfolio-2.0/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/portfolio-2.0/static/css/main.34de6062.chunk.css.map",
     "static/media/account.svg": "/portfolio-2.0/static/media/account.36204529.svg",
     "static/media/alert.svg": "/portfolio-2.0/static/media/alert.fb805a09.svg",
     "static/media/android.svg": "/portfolio-2.0/static/media/android.8a806979.svg",
+    "static/media/cv.svg": "/portfolio-2.0/static/media/cv.482fd634.svg",
     "static/media/github.svg": "/portfolio-2.0/static/media/github.2924568a.svg",
     "static/media/gmail.svg": "/portfolio-2.0/static/media/gmail.60093be5.svg",
     "static/media/headshot.jpeg": "/portfolio-2.0/static/media/headshot.d9e7c64a.jpeg",
@@ -25,6 +26,7 @@
     "static/media/node.svg": "/portfolio-2.0/static/media/node.9d7b3072.svg",
     "static/media/react-native.svg": "/portfolio-2.0/static/media/react-native.4c9b13d3.svg",
     "static/media/react.svg": "/portfolio-2.0/static/media/react.231a2667.svg",
+    "static/media/resume.pdf": "/portfolio-2.0/static/media/resume.a17912ef.pdf",
     "static/media/snake.svg": "/portfolio-2.0/static/media/snake.4f96076f.svg",
     "static/media/twitter.svg": "/portfolio-2.0/static/media/twitter.6c15e125.svg",
     "static/media/vistoso.png": "/portfolio-2.0/static/media/vistoso.9a7cd532.png",
@@ -33,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.738c8c4a.js",
-    "static/js/2.3c00d2c5.chunk.js",
+    "static/js/2.5a6da6e4.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.9607c1c4.chunk.js"
+    "static/js/main.81cbc098.chunk.js"
   ]
 }
