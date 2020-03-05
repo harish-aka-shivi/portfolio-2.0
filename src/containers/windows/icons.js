@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import account from './icons/account.svg';
 import mail from './icons/mail.svg';
 import projects from './icons/work.svg';
+import cv from './icons/cv.svg';
+import Resume from '../../statics/resume.pdf';
 import WindowsContext from './windowsContext';
 import { TYPE_ABOUT_WINDOW, TYPE_CONTACT_WINDOW, TYPE_WORK_WINDOW } from './constants';
 
@@ -59,6 +61,7 @@ export default function Icons() {
           <Icon title="About" image={account} onButtonClick={() => addToOpenWindows(TYPE_ABOUT_WINDOW)} />
           <Icon title="Projects" image={projects} onButtonClick={() => addToOpenWindows(TYPE_WORK_WINDOW)} />
           <Icon title="Contact" image={mail} onButtonClick={() => addToOpenWindows(TYPE_CONTACT_WINDOW)} />
+          <Icon title="Resume" image={cv} onButtonClick={() => window.open(Resume, '_blank')} />
         </IconsContainer>
       )}
     </WindowsContext.Consumer>

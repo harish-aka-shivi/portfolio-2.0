@@ -14,14 +14,11 @@ const ResponsiveRoot = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  /* max-height: 60vh; */
-  /* overflow-y: scroll; */
+  width: 100%;  
 `;
 
 const AboutRoot = styled.article`
   width: 100%;
-  /* max-width: 400px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,20 +26,10 @@ const AboutRoot = styled.article`
 `;
 
 const Title = styled.h3`
-
 `;
-
-const Content = styled.p`
-  width: 100%;
-`;
-
-const RandomFactTitle = styled.div`
-  /* padding-inline-start: 10px; */
-`;
-
 
 const Skills = styled.div`
-  margin-top: 8px;
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,14 +75,11 @@ const SkillRowTitle = styled.strong`
 const TableD = styled.td`
   width:50%;
   padding-bottom:16px;
-  /* padding-left: 2em; */
 `;
 
 const AboutBodyRoot = styled.div`
   padding:8px;
   width: 100%;
-  /* padding-left: 2em; */
-  /* padding-right: 2em; */
 `;
 
 const Description = styled.div`
@@ -106,18 +90,12 @@ const Description = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* padding-inline-start: 20px; */
-`;
-
-const ListItem = styled.li`
-  /* white-space: nowrap; */
 `;
 
 const HeadShot = styled.img`
   height: 30%;
   width: 30%;
   border-radius: 4em;
-
 `;
 
 function SkillItem({ title, icon, alt }) {
@@ -154,7 +132,7 @@ function AboutBody() {
           <Description>
             <div>
               I am a software developer from India
-              <span role="img" aria-label="India"> 🇮🇳</span>
+              <span role="img" aria-label="India"> 🇮🇳 </span>
               with an experience of around 4 years.
               Currently, I am an Engineering Fellow at
               <span> </span>
@@ -163,32 +141,12 @@ function AboutBody() {
             </div>
             <div>
               I enjoy working on Mobile
-              <span role="img" aria-label="mobile"> 📱</span>
+              <span role="img" aria-label="mobile"> 📱 </span>
                 and Web
-              <span role="img" aria-label="web"> 🕸️</span>
+              <span role="img" aria-label="web"> 🕸️ </span>
                   .
             </div>
           </Description>
-
-          <Content>
-            <RandomFactTitle>
-             Few random facts about me:
-            </RandomFactTitle>
-            <ul>
-              <ListItem>
-              Working-out
-                <span role="img" aria-label="work out"> 💪</span>
-              for the past 14 months and counting.
-              </ListItem>
-              <ListItem>
-              Yoga enthusiast
-                <span role="img" aria-label="yoga"> 🧘‍♂️</span>
-              and can do a head-stand
-                <span role="img" aria-label="head-stand">🤸‍♂️</span>
-                .
-              </ListItem>
-            </ul>
-          </Content>
         </AboutRoot>
         <Skills>
           <SkillTitle>Skills</SkillTitle>
