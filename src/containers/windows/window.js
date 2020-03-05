@@ -69,6 +69,10 @@ const ContentStyle = styled.div`
   overflow-y: scroll;
   max-height:60vh;
   box-shadow: 3px 3px 0 hsla(0, 0%, 100%, 0.6), inset 3px 3px rgba(0, 0, 0, 0.5);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const CloseButton = styled.a`

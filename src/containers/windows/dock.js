@@ -64,7 +64,6 @@ const DockBar = styled.section`
 
   @media (max-width: 500px) {
     display:none;
-    /* height: ${(props) => (props.height ? `${props.height}px` : '400px')}; */
   }
 
 `;
@@ -85,7 +84,6 @@ const ProgramList = styled.div`
     width:1px;
     border-left:2px solid hsla(0,0%,100%,.8);
     border-right:2px solid rgba(0,0,0,.25);
-    /* margin-bottom:8px; */
   }
 `;
 
