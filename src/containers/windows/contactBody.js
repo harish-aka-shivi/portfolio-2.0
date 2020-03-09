@@ -6,6 +6,7 @@ import github from './icons/github.svg';
 import linkedIn from './icons/linkedin.svg';
 import gmail from './icons/gmail.svg';
 import medium from './icons/medium.svg';
+import leetCode from './icons/bug.svg';
 
 const ContactBodyRoot = styled.div`
   display: flex;
@@ -15,10 +16,13 @@ const ContactBodyRoot = styled.div`
 const List = styled.ul`
   list-style:none;
   padding-inline-start:12px;
+
+  > * + * {
+    margin-top: 1.1em;
+  }
 `;
 
 const ListItem = styled.li`
-  margin-top:8px;
 `;
 
 const SocialRoot = styled.a`
@@ -84,6 +88,9 @@ export default function ContactBody() {
         </ListItem>
         <ListItem>
           <SocialItem icon={github} title="Github" url="https://github.com/harish-aka-shivi" alt="Github" />
+        </ListItem>
+        <ListItem>
+          <SocialItem icon={leetCode} title="LeetCode" url="https://leetcode.com/harishrana/" alt="Leet code" />
         </ListItem>
       </List>
     </ContactBodyRoot>
