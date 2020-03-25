@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e254249f1f3fe625b7ffb0c0a945c5d0",
+    "revision": "60045b66cf17ee700e81e33b302426f3",
     "url": "/portfolio-2.0/index.html"
   },
   {
-    "revision": "f506497270e2cf94c7b3",
+    "revision": "c395c88a4024995aa95f",
     "url": "/portfolio-2.0/static/css/main.34de6062.chunk.css"
   },
   {
-    "revision": "8ed3152f1c6b930b52e2",
-    "url": "/portfolio-2.0/static/js/2.5a6da6e4.chunk.js"
+    "revision": "a63b4382247b048b216e",
+    "url": "/portfolio-2.0/static/js/2.8a91b0ab.chunk.js"
   },
   {
-    "revision": "f506497270e2cf94c7b3",
-    "url": "/portfolio-2.0/static/js/main.81cbc098.chunk.js"
+    "revision": "c395c88a4024995aa95f",
+    "url": "/portfolio-2.0/static/js/main.c963a1ed.chunk.js"
   },
   {
     "revision": "0025e6b95168707d8a31",
@@ -32,6 +32,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-2.0/static/media/android.8a806979.svg"
   },
   {
+    "revision": "d4277f05bbedb893f03921e1437388bf",
+    "url": "/portfolio-2.0/static/media/bug.d4277f05.svg"
+  },
+  {
     "revision": "482fd634af94b1c4284e65f6ea162d72",
     "url": "/portfolio-2.0/static/media/cv.482fd634.svg"
   },
@@ -46,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d9e7c64a889ca0140dab0fe28aca6245",
     "url": "/portfolio-2.0/static/media/headshot.d9e7c64a.jpeg"
+  },
+  {
+    "revision": "3ad06d342b334eeb813fc34ccd817958",
+    "url": "/portfolio-2.0/static/media/iphone.3ad06d34.svg"
   },
   {
     "revision": "f619cdc0fb7aae06d61a7a582a767282",

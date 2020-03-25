@@ -1,23 +1,25 @@
 {
   "files": {
     "main.css": "/portfolio-2.0/static/css/main.34de6062.chunk.css",
-    "main.js": "/portfolio-2.0/static/js/main.81cbc098.chunk.js",
-    "main.js.map": "/portfolio-2.0/static/js/main.81cbc098.chunk.js.map",
+    "main.js": "/portfolio-2.0/static/js/main.c963a1ed.chunk.js",
+    "main.js.map": "/portfolio-2.0/static/js/main.c963a1ed.chunk.js.map",
     "runtime-main.js": "/portfolio-2.0/static/js/runtime-main.738c8c4a.js",
     "runtime-main.js.map": "/portfolio-2.0/static/js/runtime-main.738c8c4a.js.map",
-    "static/js/2.5a6da6e4.chunk.js": "/portfolio-2.0/static/js/2.5a6da6e4.chunk.js",
-    "static/js/2.5a6da6e4.chunk.js.map": "/portfolio-2.0/static/js/2.5a6da6e4.chunk.js.map",
+    "static/js/2.8a91b0ab.chunk.js": "/portfolio-2.0/static/js/2.8a91b0ab.chunk.js",
+    "static/js/2.8a91b0ab.chunk.js.map": "/portfolio-2.0/static/js/2.8a91b0ab.chunk.js.map",
     "index.html": "/portfolio-2.0/index.html",
-    "precache-manifest.54b109cffaacd833347a192d495e67a7.js": "/portfolio-2.0/precache-manifest.54b109cffaacd833347a192d495e67a7.js",
+    "precache-manifest.02b66fddfe3168c6248d77928384fcc9.js": "/portfolio-2.0/precache-manifest.02b66fddfe3168c6248d77928384fcc9.js",
     "service-worker.js": "/portfolio-2.0/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/portfolio-2.0/static/css/main.34de6062.chunk.css.map",
     "static/media/account.svg": "/portfolio-2.0/static/media/account.36204529.svg",
     "static/media/alert.svg": "/portfolio-2.0/static/media/alert.fb805a09.svg",
     "static/media/android.svg": "/portfolio-2.0/static/media/android.8a806979.svg",
+    "static/media/bug.svg": "/portfolio-2.0/static/media/bug.d4277f05.svg",
     "static/media/cv.svg": "/portfolio-2.0/static/media/cv.482fd634.svg",
     "static/media/github.svg": "/portfolio-2.0/static/media/github.2924568a.svg",
     "static/media/gmail.svg": "/portfolio-2.0/static/media/gmail.60093be5.svg",
     "static/media/headshot.jpeg": "/portfolio-2.0/static/media/headshot.d9e7c64a.jpeg",
+    "static/media/iphone.svg": "/portfolio-2.0/static/media/iphone.3ad06d34.svg",
     "static/media/java.svg": "/portfolio-2.0/static/media/java.f619cdc0.svg",
     "static/media/javascript.svg": "/portfolio-2.0/static/media/javascript.3c848046.svg",
     "static/media/linkedin.svg": "/portfolio-2.0/static/media/linkedin.4a17602a.svg",
@@ -35,8 +37,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.738c8c4a.js",
-    "static/js/2.5a6da6e4.chunk.js",
+    "static/js/2.8a91b0ab.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.81cbc098.chunk.js"
+    "static/js/main.c963a1ed.chunk.js"
   ]
 }
