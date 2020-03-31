@@ -153,22 +153,25 @@ function AboutBody() {
           <SkillBody>
             <SkillTable>
               <tbody>
+
                 <TableRow>
-                  <TableD>
-                    <SkillItem title="Android" icon={android} alt="Android" />
-                  </TableD>
                   <TableD>
                     <SkillItem title="React" icon={react} alt="React" />
                   </TableD>
-                </TableRow>
-                <TableRow>
                   <TableD>
                     <SkillItem title="React Native" icon={reactnative} alt="React Native" />
                   </TableD>
+                </TableRow>
+
+                <TableRow>
                   <TableD>
                     <SkillItem title="Node" icon={node} alt="Node" />
                   </TableD>
+                  <TableD>
+                    <SkillItem title="Android" icon={android} alt="Android" />
+                  </TableD>
                 </TableRow>
+
                 <TableRow>
                   <TableD>
                     <SkillItem title="Javascript" icon={javascript} alt="Javascript" />
@@ -177,6 +180,7 @@ function AboutBody() {
                     <SkillItem title="Java" icon={java} alt="Java" />
                   </TableD>
                 </TableRow>
+
               </tbody>
             </SkillTable>
           </SkillBody>
