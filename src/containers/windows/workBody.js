@@ -233,11 +233,19 @@ function WorkBody() {
       </ProjectSummary>
 
       <ProjectItem
-        imageSrc={vistoso}
-        title="Vistoso  📷"
-        renderShowcaseIcons={() => (<VistosoShowCase />)}
-        openUrl="https://play.google.com/store/apps/details?id=com.staqu.vistoso"
-        description="An android app to apply fun filters and stickers on your image"
+        imageSrc={github}
+        title="Super app  "
+        renderShowcaseIcons={() => (<SuperAppShowCase />)}
+        openUrl="https://github.com/harish-aka-shivi/super-app"
+        description="A React Native app experimenting with the different libraries. It also uses graphql and react-native-reanimated."
+      />
+
+      <ProjectItem
+        imageSrc={github}
+        title="Testing Tutor"
+        renderShowcaseIcons={() => (<TestingTutorShowCase />)}
+        openUrl="https://github.com/harish-aka-shivi/testing-tutor"
+        description="A web app build using NextJS and NodeJS to teach users how to write tests."
       />
 
       <ProjectItem
@@ -258,27 +266,20 @@ function WorkBody() {
 
       <ProjectItem
         imageSrc={github}
-        title="Super app  "
-        renderShowcaseIcons={() => (<SuperAppShowCase />)}
-        openUrl="https://github.com/harish-aka-shivi/super-app"
-        description="A React Native app experimenting with the different libraries. It also uses graphql and react-native-reanimated."
-      />
-
-      <ProjectItem
-        imageSrc={github}
-        title="Testing Tutor"
-        renderShowcaseIcons={() => (<TestingTutorShowCase />)}
-        openUrl="https://github.com/harish-aka-shivi/testing-tutor"
-        description="A web app build using NextJS and NodeJS to teach users how to write tests."
-      />
-
-      <ProjectItem
-        imageSrc={github}
         title="Portfolio"
         renderShowcaseIcons={() => (<PortfolioShowcase />)}
         openUrl="https://github.com/harish-aka-shivi/portfolio-2.0"
         description="This windows themed portfolio build using ReactJS."
       />
+
+      <ProjectItem
+        imageSrc={vistoso}
+        title="Vistoso  📷"
+        renderShowcaseIcons={() => (<VistosoShowCase />)}
+        openUrl="https://play.google.com/store/apps/details?id=com.staqu.vistoso"
+        description="An android app to apply fun filters and stickers on your image"
+      />
+
 
     </RootDiv>
   );
